@@ -31,7 +31,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Guru 99 banking application</projectName>
+                            <projectName>XE Automation acceptance tests</projectName>
                             <outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
                             <skippedFails>true</skippedFails>
