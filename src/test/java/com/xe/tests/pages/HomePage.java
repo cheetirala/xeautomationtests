@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-/**
- * Created by kotche on 19/12/2016.
- */
+// xe home page
 
 @Component
 public class HomePage {
@@ -21,16 +19,16 @@ public class HomePage {
     private WebDriver browser;
 
     @FindBy(id = "amount")
-    WebElement amount;
+    private WebElement amount;
 
     @FindBy(id = "from")
-    WebElement from;
+    private WebElement from;
 
     @FindBy(id = "to")
-    WebElement to;
+    private WebElement to;
 
     @FindBy(id = "ucc_go_btn_svg")
-    WebElement submit;
+    private WebElement submit;
 
     @PostConstruct
     public void setup() {
@@ -43,10 +41,12 @@ public class HomePage {
     }
 
     public void convert_from_euros_to_pounds() {
-        from.sendKeys("EUR - Euro");
-        from.sendKeys(Keys.TAB);
-        to.sendKeys("GBP - British Pound");
-        to.sendKeys(Keys.TAB);
+        from.sendKeys("EUR");
+        from.sendKeys(Keys.ARROW_DOWN);
+        from.sendKeys(Keys.ENTER);
+        to.sendKeys("GBP");
+        to.sendKeys(Keys.ARROW_DOWN);
+        to.sendKeys(Keys.ENTER);
     }
 
 }

@@ -1,19 +1,23 @@
 package com.xe.tests.steps;
 
 import com.xe.tests.pages.HomePage;
+import com.xe.tests.pages.ResultsPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Created by kotche on 19/12/2016.
- */
+// euro to pounds conversion step definition file
+
 public class EuroToPoundSteps {
 
     @Autowired
     private HomePage homePage;
+
+    @Autowired
+    private ResultsPage resultsPage;
 
     @Autowired
     private WebDriver browser;
@@ -35,6 +39,6 @@ public class EuroToPoundSteps {
 
     @Then("^the amount in pounds (.*) should be displayed$")
     public void the_amount_in_pounds_should_be_displayed(String result) throws Throwable {
-
+        Assert.assertEquals(result, resultsPage.getResult());
     }
 }
