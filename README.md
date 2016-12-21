@@ -2,8 +2,12 @@
 
 Acceptance tests automation using Java, spring, cucumber, selenium webdriver, page object model with page factory, maven, junit and intellij for guru99 banking app
 
-From command prompt
+Download the project to a location on your PC.
 
-mvn clean install
+From command prompt navigate to the project directory.
 
-The result is at /target/site/cucumber-reports/feature-overview.html
+Then enter the following command to run the tests
+
+mvn clean verify
+
+The test reports are located at /target/site/cucumber-reports/feature-overview.html
