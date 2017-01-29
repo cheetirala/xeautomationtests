@@ -9,9 +9,9 @@ Feature: Euro to Pound conversion
     Then the amount in pounds <amount-in-pounds> should be displayed
     Examples:
       | amount-in-euros | amount-in-pounds |
-      | 10              | 8.44881          |
-      | 20              | 16.9060          |
-      | 30              | 25.3590          |
-      | 50              | 42.2650          |
-      | 100             | 84.3348          |
+      | 10              | 8.52470          |
+      | 20              | 17.0494          |
+      | 30              | 25.5741          |
+      | 50              | 42.6235          |
+      | 100             | 85.2470          |
 
