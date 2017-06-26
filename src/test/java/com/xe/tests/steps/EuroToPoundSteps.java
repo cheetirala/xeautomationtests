@@ -41,4 +41,16 @@ public class EuroToPoundSteps {
     public void the_amount_in_pounds_should_be_displayed(String result) throws Throwable {
         Assert.assertEquals(result, resultsPage.getResult());
     }
+    
+    @When("^I would like to add currency (.*)$")
+    public void i_would_like_to_add_currency(String currency) throws Throwable {
+            homePage.add_currency(currency);
+    }
+    
+    @When("^(.*) should appear in the live rates$")
+    public void should_appear_in_the_live_rates(String expected) throws Throwable {
+         Assert.assertTrue(homePage.getRatesTable().contains(expected));
+    }
+    
+    
 }

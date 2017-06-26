@@ -29,6 +29,12 @@ public class HomePage {
 
     @FindBy(id = "ucc_go_btn_svg")
     private WebElement submit;
+    
+    @FindBy(id = "c")
+    private WebElement addCurrency;
+    
+    @FindBy(id = "xRatesBxTable")
+    private WebElement ratesTable;
 
     @PostConstruct
     public void setup() {
@@ -48,5 +54,19 @@ public class HomePage {
         to.sendKeys(Keys.ARROW_DOWN);
         to.sendKeys(Keys.ENTER);
     }
+
+	public void add_currency(String currency) throws InterruptedException {		
+	
+		addCurrency.sendKeys(currency);
+		addCurrency.sendKeys(Keys.ARROW_DOWN);
+		addCurrency.sendKeys(Keys.ENTER);
+		
+		Thread.sleep(5000);
+	}
+
+	public String getRatesTable() {
+		
+		return ratesTable.getText();
+	}
 
 }
