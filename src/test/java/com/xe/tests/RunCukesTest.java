@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features", format = {"pretty", "json:target/cucumber.json"}, tags={"~@ignore", "@addCurrency"})
+@CucumberOptions(features = "src/test/resources/features", format = {"pretty", "json:target/cucumber.json"}, tags={"~@ignore"})
 
 public class RunCukesTest {
 }
