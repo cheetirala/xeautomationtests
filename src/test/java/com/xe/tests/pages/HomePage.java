@@ -59,9 +59,8 @@ public class HomePage {
 	
 		addCurrency.sendKeys(currency);
 		addCurrency.sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(2000);
 		addCurrency.sendKeys(Keys.ENTER);
-		
-		Thread.sleep(5000);
 	}
 
 	public String getRatesTable() {
