@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
  */
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:features", plugin = {"pretty", "json:target/cucumber.json"}, tags={"~@ignore"})
+@CucumberOptions(features = "classpath:features", plugin = {"pretty", "json:target/cucumber.json"}, tags={"~@ignore", "@transfer_money"})
 
 public class RunCukesTest {
 }
