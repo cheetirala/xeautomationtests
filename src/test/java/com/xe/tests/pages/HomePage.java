@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +37,24 @@ public class HomePage {
     @FindBy(id = "xRatesBxTable")
     private WebElement ratesTable;
 
+    @FindBy(css = ".button.green.white-text")
+    private WebElement transfermoneywithxe;
+    
+    @FindBy(linkText = "Get Started")
+    private WebElement getstarted;
+    
+    @FindBy(id ="ff-country")
+    private WebElement country;
+    
+    @FindBy(xpath = "//*[@id='ff-email']")
+    private WebElement email;
+    
+    @FindBy(xpath = "//*[@id='ff-confirm-email']")
+    private WebElement Confirmemail;
+    
+    @FindBy(id = "ff-step1")
+    private WebElement Continue;
+    
     @PostConstruct
     public void setup() {
         PageFactory.initElements(browser, this);
@@ -69,4 +88,26 @@ public class HomePage {
 		return ratesTable.getText();
 	}
 
+	
+	public void transfer_money_with_xe() throws InterruptedException {
+		Thread.sleep(10000);
+		System.out.println(transfermoneywithxe.getText());
+		transfermoneywithxe.click();
+		
+	}
+
+	public void i_click_on_get_started() {
+		getstarted.click();
+		
+	}
+	
+    public void transfer_sign_up_page_should_appear()  {
+    	Select select =new Select(country);
+    	select.selectByVisibleText("canada");
+        email.sendKeys("lalasa.srinivas@gmail.com");
+        Confirmemail.sendKeys("lalasa.srinivas@gmail.com");
+        Continue.click();
+    }
+    
+    
 }

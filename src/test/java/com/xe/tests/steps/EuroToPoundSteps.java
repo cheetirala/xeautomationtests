@@ -26,7 +26,12 @@ public class EuroToPoundSteps {
     public void i_navigate_to_XE_website() throws Throwable {
         browser.get("http://www.xe.com/");
     }
-
+    
+    @Given("^I navigate to xe money transfer$")
+    public void i_navigate_to_XE_money_transfer() throws Throwable {
+        browser.get("http://www.xe.com/xemoneytransfer/uk");
+    }
+    
     @When("^I would like to convert from euros to pounds$")
     public void i_would_like_to_convert_from_euros_to_pounds() throws Throwable {
             homePage.convert_from_euros_to_pounds();
@@ -51,6 +56,20 @@ public class EuroToPoundSteps {
     public void should_appear_in_the_live_rates(String expected) throws Throwable {
          Assert.assertTrue(homePage.getRatesTable().contains(expected));
     }
+
+    @When("^I would click on transfer money with XE$")
+    public void i_would_click_on_transfer_money_with_xe( ) throws Throwable {
+            homePage.transfer_money_with_xe();
     
+    }
     
+    @When("^I Click on Get Started$")
+    public void i_click_on_get_started( ) throws Throwable {
+            homePage.i_click_on_get_started();
+    }        
+    
+    @When("^Transfer signup page should appear$")
+    public void transfer_sign_up_page_should_appear( ) throws Throwable {
+            homePage.transfer_sign_up_page_should_appear();
+    }        
 }
